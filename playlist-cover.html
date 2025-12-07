@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,372 +18,194 @@
       background: #fff7f9;
     }
 
-    h1, h2 {
-      color: #ff6f9c;
-      margin-bottom: 0.5rem;
+    h1, h2 { color:#ff6f9c;margin-bottom:.5rem;}
+    h1{text-align:center;margin-bottom:2rem;font-size:2.3rem;}
+    section{margin-top:2.5rem;}
+    p{margin-top:.5rem;}
+    h3{color:#ff4c86;margin-top:1.5rem;}
+    ul{margin-top:.5rem;padding-left:1.2rem;}
+
+    /* back link */
+    .back{display:block;text-align:center;margin-top:4rem;color:#ff6f9c;font-weight:600;text-decoration:none;}
+    .back:hover{text-decoration:underline;}
+
+    /* table */
+    .table-wrapper{width:100%;overflow-x:auto;margin:1rem 0;}
+    table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:350px;}
+    th,td{padding:.5rem;border-bottom:1px solid #eee;text-align:left;}
+
+    /* thumbnail */
+    .video-thumbnail-wrapper{
+      position:relative;margin-top:1rem;border-radius:12px;overflow:hidden;cursor:pointer;
+      box-shadow:0 8px 25px rgba(0,0,0,.15);max-width:100%;
     }
+    .video-thumbnail-image{width:100%;display:block;}
+    .video-thumbnail-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.05),rgba(0,0,0,.35));}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 2rem;
-      font-size: 2.3rem;
+    .video-play-button{
+      position:absolute;inset:0;margin:auto;width:80px;height:80px;
+      border-radius:50%;border:none;background:rgba(255,111,156,.96);color:#fff;
+      font-size:2rem;display:flex;align-items:center;justify-content:center;
+      cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.35);transition:.2s;
     }
+    .video-play-button:hover{transform:scale(1.08);background:#ff4c86;}
 
-    section {
-      margin-top: 2.5rem;
+    /* modal */
+    #videoModal{
+      display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);
+      z-index:9999;justify-content:center;align-items:center;padding:1rem;
     }
+    #videoModal iframe{width:min(850px,90%);height:60vh;border:none;border-radius:12px;}
+    .closeModal{position:absolute;top:22px;right:28px;background:#ff6f9c;color:#fff;
+      border:none;padding:8px 14px;border-radius:8px;font-size:1.4rem;cursor:pointer;transition:.3s;}
+    .closeModal:hover{background:#ff4c86;transform:scale(1.05);}
 
-    p {
-      margin-top: 0.5rem;
-    }
-
-    h3 {
-      color: #ff4c86;
-      margin-top: 1.5rem;
-    }
-
-    ul {
-      margin-top: 0.5rem;
-      padding-left: 1.2rem;
-    }
-
-    .back {
-      display: block;
-      text-align: center;
-      margin-top: 4rem;
-      color: #ff6f9c;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .back:hover {
-      text-decoration: underline;
-    }
-
-    .table-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      margin: 1rem 0;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      min-width: 350px;
-    }
-
-    th, td {
-      padding: 0.5rem;
-      border-bottom: 1px solid #eee;
-      text-align: left;
-    }
-
-    /* Demo thumbnail styles */
-    .video-thumbnail-wrapper {
-      position: relative;
-      margin-top: 1rem;
-      border-radius: 12px;
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, .15);
-      max-width: 100%;
-    }
-
-    .video-thumbnail-image {
-      width: 100%;
-      display: block;
-      height: auto;
-    }
-
-    .video-thumbnail-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.05),
-        rgba(0, 0, 0, 0.35)
-      );
-    }
-
-    .video-play-button {
-      position: absolute;
-      inset: 0;
-      margin: auto;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: none;
-      background: rgba(255, 111, 156, 0.96);
-      color: #fff;
-      font-size: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, .35);
-      transition: transform .2s, background .2s, box-shadow .2s;
-    }
-
-    .video-play-button:hover {
-      transform: scale(1.08);
-      background: #ff4c86;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, .4);
-    }
-
-    /* ========= MOBILE STYLES ========= */
-    @media (max-width: 600px) {
-      body {
-        padding: 2rem 1rem;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-      }
-
-      h2 {
-        font-size: 1.3rem;
-      }
-
-      h3 {
-        font-size: 1.1rem;
-      }
-
-      p,
-      li {
-        font-size: 0.95rem;
-      }
-
-      table {
-        font-size: 0.85rem;
-      }
-
-      .back {
-        margin-top: 3rem;
-      }
+    @media(max-width:600px){
+      body{padding:2rem 1rem;}
+      h1{font-size:1.8rem;margin-bottom:1.5rem;}
+      h2{font-size:1.3rem;}
+      h3{font-size:1.1rem;}
+      p,li{font-size:.95rem;}
+      table{font-size:.85rem;}
+      .back{margin-top:3rem;}
     }
   </style>
 </head>
 
 <body>
 
-  <h1>Generative AI Cover Maker – Full Project</h1>
+<h1>Generative AI Cover Maker – Full Project</h1>
 
-  <!-- 1. DESCRIPTION & MOTIVATION -->
-  <section>
-    <h2>Description & Motivation</h2>
-    <p>
-      The Generative AI Cover Maker is a creative tool designed to automatically generate album-style
-      playlist covers based on mood, theme, or genre prompts. People love customizing playlists, yet
-      most default to generic covers because designing custom art takes time or graphic design skill.
-    </p>
-    <p>
-      We wanted to make playlist expression easy, fun, and personal — allowing users to translate music
-      taste into visual art in seconds. With AI image generation becoming more accessible, this project
-      explores how users interact with creative AI tools and how interface design impacts trust,
-      creativity, and usability.
-    </p>
-  </section>
+<section>
+<h2>Description & Motivation</h2>
+<p>
+The Generative AI Cover Maker is a creative tool designed to automatically generate playlist cover art 
+based on mood, color, or theme inputs. People often attach emotion and identity to playlists,
+but most never customize the artwork because it requires design skill or time.
+</p>
+<p>
+Our goal was to make artistic expression effortless — letting users transform music taste into visuals 
+in seconds through AI. With generative AI becoming more accessible, this project explores how users 
+interact with creative AI tools, how interface choices influence trust and understanding,
+and how customization features impact satisfaction.
+</p>
+</section>
 
-  <!-- 2. ONLINE STUDY -->
-  <section>
-    <h2>Online Study</h2>
-    <p>
-      Our initial online study helped us understand user expectations for playlist art. Participants
-      viewed different covers and shared what styles felt meaningful versus random. We also asked
-      how they perceive AI-generated visuals and what customization control they would want.
-    </p>
-    <p>
-      Results showed a strong preference for covers that visually reflect the playlist theme. Many users
-      wanted the ability to tweak mood, color, and style — confirming that AI should generate quickly but
-      still leave room for personal creative input.
-    </p>
-  </section>
+<section>
+<h2>Online Study</h2>
+<p>
+Our initial online study gathered expectations around playlist cover aesthetics and perceptions of AI design.
+Participants viewed sample imagery and answered questions on what feels meaningful versus random. 
+Most users wanted covers that visually match playlist themes and requested customization controls such as
+color mood, style, and layout adjustments.
+</p>
+<p>
+This confirmed that AI should produce quick results but still allow human input, leading us to design 
+a workflow where users generate first, then personalize.
+</p>
+</section>
 
-  <!-- 3. PROTOTYPING PHASE -->
-  <section>
-    <h2>Prototyping Phase</h2>
-    <p>
-      We created two low-fidelity prototypes to compare interaction flow:
-    </p>
-    <ul>
-      <li><b>Design A – Step-by-Step Guided Flow:</b> Connect → Generate → Customize → Download</li>
-      <li><b>Design B – Dashboard Layout:</b> All tools visible on one page at once</li>
-    </ul>
-    <p>
-      The goal was to evaluate which interface supported creativity, clarity, and confidence.
-      Participants used printed and digital mockups and completed core tasks like connecting
-      a playlist, generating an AI cover, and customizing it.
-    </p>
-  </section>
+<section>
+<h2>Prototyping Phase</h2>
+<p>We designed two low-fidelity prototypes:</p>
+<ul>
+<li><b>Design A – Step-by-Step Guided Flow</b>: Connect → Generate → Customize → Download</li>
+<li><b>Design B – Dashboard Layout</b>: All tools visible at once</li>
+</ul>
+<p>
+Participants used printed/digital mockups and completed tasks like connecting a playlist, generating a cover,
+and customizing it. The main goal was to compare comfort, clarity, and creativity between workflows.
+</p>
+</section>
 
-  <!-- 4. USER STUDIES 1 & 2 RESULTS -->
-  <section id="user-studies">
-    <h2>User Studies Results</h2>
+<section id="user-studies">
+<h2>User Studies Results</h2>
 
-    <!-- STUDY 1 -->
-    <h3>User Study 1 – Low-Fidelity Prototype Comparison</h3>
-    <p>
-      Users tested both prototypes and rated usability, clarity, and creativity. All three participants
-      completed tasks faster with Design A and expressed more confidence in a structured guided flow.
-    </p>
+<h3>User Study 1 – Prototype Comparison</h3>
+<p>
+All 3 participants completed tasks faster with Design A and expressed more confidence
+in a guided sequence. The dashboard layout caused uncertainty due to unclear labels.
+</p>
 
-    <div class="table-wrapper">
-      <table>
-        <tr><th>Statement</th><th>P1</th><th>P2</th><th>P3</th><th>Mean</th></tr>
-        <tr><td>I could tell what to do</td><td>5</td><td>5</td><td>4</td><td>4.7</td></tr>
-        <tr><td>Layout felt organized</td><td>5</td><td>4</td><td>4</td><td>4.3</td></tr>
-        <tr><td>I felt creative</td><td>4</td><td>4</td><td>4</td><td>4.0</td></tr>
-        <tr><td>Prefer Design A</td><td>5</td><td>5</td><td>4</td><td>4.7</td></tr>
-      </table>
-    </div>
+<div class="table-wrapper">
+<table>
+<tr><th>Statement</th><th>P1</th><th>P2</th><th>P3</th><th>Mean</th></tr>
+<tr><td>I could tell what to do</td><td>5</td><td>5</td><td>4</td><td>4.7</td></tr>
+<tr><td>Layout felt organized</td><td>5</td><td>4</td><td>4</td><td>4.3</td></tr>
+<tr><td>I felt creative</td><td>4</td><td>4</td><td>4</td><td>4.0</td></tr>
+<tr><td>Prefer Design A</td><td>5</td><td>5</td><td>4</td><td>4.7</td></tr>
+</table>
+</div>
 
-    <p><b>Key Findings:</b></p>
-    <ul>
-      <li>Design A was easier to navigate and more intuitive.</li>
-      <li>The dashboard layout caused confusion due to unclear labels and starting points.</li>
-      <li>Participants described Design A as “smooth,” “organized,” and easier to follow.</li>
-    </ul>
+<p><b>Decision:</b> Continue with Design A.</p>
+<p><b>Improvements planned:</b> Add undo/redo, presets, clearer customization UI.</p>
 
-    <p><b>Decision:</b> We moved forward with the Step-by-Step guided flow.</p>
-    <p><b>Planned Improvements:</b> Add undo/redo, presets, and clearer customization UI.</p>
+<hr style="margin:2rem 0;opacity:.25;">
 
-    <hr style="opacity:.3;margin:2rem 0;">
+<h3>User Study 2 – Functional Prototype Evaluation</h3>
+<p>
+Users tested a working version: connect playlist → generate cover → customize → download.
+Sessions captured confusion points and behavior patterns.
+</p>
 
-    <!-- STUDY 2 -->
-    <h3>User Study 2 – Functional Prototype Test</h3>
-    <p>
-      Study 2 evaluated the working app on a laptop with real interaction. Users performed the full flow
-      and we recorded confusion points and usability strengths.
-    </p>
+<p><b>What worked well:</b></p>
+<ul>
+<li>Smooth playlist connection</li>
+<li>AI generation was exciting & matched playlist vibe</li>
+<li>Downloading was clear and quick</li>
+</ul>
 
-    <p><b>What Worked Well:</b></p>
-    <ul>
-      <li>Playlist connection was consistently smooth and fast.</li>
-      <li>Users enjoyed watching the AI generate covers that matched their playlist.</li>
-      <li>Downloading the final cover was clear and straightforward.</li>
-    </ul>
+<p><b>Challenges:</b></p>
+<ul>
+<li>Customization UI caused confusion</li>
+<li>Buttons not clearly labeled</li>
+<li>Users expected more styling options or draggable elements</li>
+</ul>
 
-    <p><b>Challenges Observed:</b></p>
-    <ul>
-      <li>Most confusion occurred during the customization step.</li>
-      <li>Participants sometimes mis-clicked buttons or expected more styling options.</li>
-      <li>Some UI elements looked draggable or interactive when they were not.</li>
-    </ul>
+<p><b>Next Iterations:</b></p>
+<ul>
+<li>Guide customization more clearly with labels/tooltips</li>
+<li>Improve visibility of styling features</li>
+<li>Offer mood/color presets</li>
+</ul>
 
-    <p><b>Iteration Plan:</b></p>
-    <ul>
-      <li>Clarify the customization page layout and navigation.</li>
-      <li>Add labels, hints, and/or tooltips for each control.</li>
-      <li>Expand style presets to support more visual variety.</li>
-    </ul>
+<p>
+Overall, the main interaction flow is intuitive and enjoyable. Enhancing clarity 
+in the customization phase will improve user confidence and creativity.
+</p>
+</section>
 
-    <p><b>Conclusion:</b> The main flow (Connect → Generate → Customize → Download) is intuitive and
-    enjoyable. Future work will focus on improving customization clarity and expanding creative control.</p>
-  </section>
+<section>
+<h2>Demo Video</h2>
+<p>Click play to view the full interaction experience.</p>
 
-  <!-- 5. DEMO -->
-  <section>
-    <h2>Demo Video</h2>
-    <p>Tap below to watch how a playlist is transformed into unique AI-generated cover art.</p>
+<!-- Thumbnail Preview -->
+<div class="video-thumbnail-wrapper" onclick="openDemo()">
+  <img src="assets/img/playlist-cover.png" class="video-thumbnail-image" alt="Video Thumbnail">
+  <div class="video-thumbnail-overlay"></div>
+  <button class="video-play-button">▶</button>
+</div>
 
-    <!-- Thumbnail preview -->
-    <div class="video-thumbnail-wrapper" id="demoPlayer">
-      <img src="playlist-cover.png" class="video-thumbnail-image" alt="Demo Thumbnail">
-      <div class="video-thumbnail-overlay"></div>
-      <button class="video-play-button">▶</button>
-    </div>
+<!-- Modal Google Drive Player -->
+<div id="videoModal">
+  <iframe id="driveVideo" allow="autoplay" allowfullscreen></iframe>
+  <button class="closeModal" onclick="closeDemo()">✕</button>
+</div>
+</section>
 
-    <!-- Actual video -->
-    <video id="demoVideo" src="demo.mp4" controls width="100%"
-      style="display:none;margin-top:1rem;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.15)">
-      Your browser does not support video playback.
-    </video>
-  </section>
+<a href="index.html#work" class="back">⬅ Back to Projects</a>
 
-  <a href="index.html#work" class="back">⬅ Back to Projects</a>
-
-  <script>
-    (function () {
-      const thumb = document.getElementById("demoPlayer");
-      const video = document.getElementById("demoVideo");
-      if (!thumb || !video) return;
-
-      thumb.addEventListener("click", () => {
-        thumb.style.display = "none";
-        video.style.display = "block";
-        video.play().catch(() => {});
-      });
-    })();
-  </script>
+<script>
+function openDemo(){
+  document.getElementById("videoModal").style.display="flex";
+  document.getElementById("driveVideo").src=
+  "https://drive.google.com/file/d/1W-oRQuqkpvYnmtdvbEOkGtkkrkxFHglG/preview";
+}
+function closeDemo(){
+  document.getElementById("videoModal").style.display="none";
+  document.getElementById("driveVideo").src="";
+}
+</script>
 
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Playlist Cover Maker – Preview</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <style>
-    body {
-      background-color: #fff7f9;
-      font-family: "Poppins", sans-serif;
-      color: #2e2e2e;
-      text-align: center;
-      padding: 5rem 1rem;
-    }
-    h1 {
-      font-size: 2rem;
-      color: #ff6f9c;
-    }
-    p {
-      max-width: 600px;
-      margin: 1rem auto;
-      color: #555;
-    }
-    .preview-img {
-      margin-top: 2rem;
-      border-radius: 1rem;
-      border: 2px solid #ff6f9c;
-      box-shadow: 0 6px 20px rgba(255,111,156,.2);
-      max-width: 600px;
-      width: 100%;
-    }
-    a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      color: #ff6f9c;
-      font-weight: 600;
-      text-decoration: none;
-      margin-top: 2rem;
-      border: 2px solid #ff6f9c;
-      padding: 0.5rem 1rem;
-      border-radius: 25px;
-      transition: all 0.3s ease;
-    }
-    a:hover {
-      background-color: #ff6f9c;
-      color: #fff;
-      box-shadow: 0 0 12px rgba(255, 111, 156, 0.4);
-    }
-  </style>
-</head>
-<body>
-  <h1>Generative AI Cover Maker (HCC Project)</h1>
-  <p>
-    This project explores how generative AI can translate the mood and tone of songs 
-    into unique playlist cover art. A detailed case study: including motivation, 
-    research, prototypes, and user study results will be published here during finals week.
-  </p>
-  <img src="assets/img/playlist-cover.png" alt="Playlist Cover Maker Preview" class="preview-img">
-  <br>
-  <a href="index.html#work"><i class="bx bx-left-arrow-alt"></i> Back to Projects</a>
-</body>
-</html>
->>>>>>> d2cea4656693fdc74a77c2a75f772b3ca903826e
