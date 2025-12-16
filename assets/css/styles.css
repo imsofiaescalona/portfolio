@@ -535,7 +535,7 @@ img { max-width: 100%; height: auto; display: block; }
 .contact__button {
   display: block; border: none; outline: none;
   font-size: var(--normal-font-size); cursor: pointer;
-  margin-left: auto;
+  margin-left:auto;
 }
 
 .preview-img {
@@ -560,6 +560,7 @@ img { max-width: 100%; height: auto; display: block; }
   transition: 0.3s;
   margin-bottom: 1.5rem; /* 👈 adds space before the icons */
 }
+.contact__button.button { display: block; margin: 0 auto; }
 
 /* ===== FOOTER =====*/
 .footer {
